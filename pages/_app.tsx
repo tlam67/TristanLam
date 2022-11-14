@@ -1,21 +1,19 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { useState } from 'react'
-import { ThemeProvider } from 'styled-components'
+import { useTheme, ThemeProvider } from 'next-themes'
 import { lightTheme, darkTheme, GlobalStyles } from '../ThemeConfig'
+import ThemeSwitcher from '../components/ThemeSwitcher'
 
-export default function App({ Component, pageProps }: AppProps) {
-  const [theme, setTheme] = useState('light');
+interface themedAppProps extends Omit<AppProps, "Component"> {
+  Component: AppProps["Component"] & { theme: string | undefined }
+}
 
-  const toggleTheme = () => {
-    theme == 'light' ? setTheme('dark') : setTheme('light');
-  }
-
+export default function App({ Component, pageProps }: themedAppProps) {
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      <GlobalStyles />
-      <button onClick={toggleTheme}>Switch Theme</button>
+    <ThemeProvider forcedTheme={Component.theme || undefined} attribute="class">
       <Component {...pageProps} />
+      <ThemeSwitcher/>
     </ThemeProvider>
   )
 }

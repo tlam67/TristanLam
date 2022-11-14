@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+// outdated - replaced with theme switcher using next-themes
+
 type customTheme = {
   body: string;
   text: string;
