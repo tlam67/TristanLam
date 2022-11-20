@@ -1,9 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 a {
@@ -15,6 +25,32 @@ a {
   box-sizing: border-box;
 }
 
+@keyframes bounceOrig {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+    transform: translateY(25%);
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
+}
+
+#down-arrow {
+  animation: 1.5s bounceOrig infinite;
+  /* animation-play-state: paused; */
+  animation-play-state: running;
+  animation-timing-function: ease-in-out;
+}
+
+/* 
+below is code for bouncing down arrow only on hover, to enable
+uncomment below and swap the animation play state in the above code
+*/
+/* #down-arrow:hover {
+  animation-play-state: running;
+} */
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -22,5 +58,17 @@ a {
   body {
     color: white;
     background: black;
+  }
+}
+
+@layer base {
+  body {
+    @apply dark:bg-blue-black bg-amber-50;
+  }
+  header {
+    @apply dark:bg-header-gray bg-amber-50;
+  }
+  svg {
+    @apply dark:text-arrow-blue text-black;
   }
 }
