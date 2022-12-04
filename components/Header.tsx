@@ -1,5 +1,6 @@
 import ThemeSwitcher from "./ThemeSwitcher";
 import NextLink from "next/link";
+import { ScrollLink } from "./ScrollLink";
 
 interface HeaderEntry {
   label: string,
@@ -8,16 +9,20 @@ interface HeaderEntry {
 
 const headerData: HeaderEntry[] = [
   {
-    label: "About",
+    label: "Home",
     href: "/",
+  },
+  {
+    label: "About",
+    href: "#about",
   },
   {
     label: "Experience",
-    href: "/",
+    href: "#experience",
   },
   {
     label: "Projects",
-    href: "/",
+    href: "#projects",
   },
   {
     label: "Contact",
@@ -31,15 +36,15 @@ const Header = () => {
       <div className="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center justify-end">
           {headerData.map((headerEntry: HeaderEntry, idx: number) => {
             return (
-              <NextLink
+              <ScrollLink
                 href={headerEntry.href}
                 key={idx}
                 className={
-                  "hidden md:inline-block p-1 sm:px-3 sm:py-2 z-20 rounded-lg  transition-all text-gray-600 dark:text-gray-400 dark:hover:text-white hover:text-black ease-in-out"
+                  "hidden md:inline-block p-1 sm:px-3 sm:py-2 z-20 rounded-lg transition-all text-gray-600 dark:text-gray-400 dark:hover:text-white hover:text-black ease-in-out"
                 }
               >
                 {headerEntry.label}
-              </NextLink>
+              </ScrollLink>
             );
           })}
           <ThemeSwitcher/>
