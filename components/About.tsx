@@ -43,14 +43,15 @@ const Description = (descriptionType: string, setDescriptionType: (descriptionTy
     <>
       <Image src={profile} alt="profile picture" className="my-4 justify-self-center w-80 md:w-100 lg:w-150"/>
 
-      <div className='mt-3 grid grid-cols-4 gap-4'>
+      <div className='my-3 grid grid-cols-4 gap-4'>
         <button className={` m-1 p-1 ${descriptionType === 'tldr' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('tldr')}>TL;DR</button>
         <button className={` m-1 p-1 ${descriptionType === 'less' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('less')}>Less</button>
         <button className={` m-1 p-1 ${descriptionType === 'default' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('default')}>Default</button>
         <button className={` m-1 p-1 ${descriptionType === 'more' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('more')}>More</button>
       </div>
 
-      <div className='w-[50vh] break-all'>
+      {/* center this later */}
+      <div className='w-96 max-w-2xl break-all'>
         {selectDescription(descriptionType)}
 
       </div>
@@ -67,7 +68,7 @@ const About = () => {
     <div className="px-32 py-0" id="about">
       <main className="pt-24 px-0  flex flex-1 flex-col flex-wrap justify-start items-center">
       <a onClick={() => setOpen(!open)} className="cursor-pointer">
-        <h1 className="text-5xl justify-self-center">
+        <h1 className="text-4xl justify-self-center">
           About Me
         </h1>
       </a>
