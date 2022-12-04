@@ -24,10 +24,6 @@ const headerData: HeaderEntry[] = [
     label: "Projects",
     href: "#projects",
   },
-  {
-    label: "Contact",
-    href: "/",
-  },
 ];
 
 const Header = () => {
