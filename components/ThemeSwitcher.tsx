@@ -8,7 +8,7 @@ const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setTheme('dark');
+    if (theme !== 'dark' && theme !== 'light') setTheme('dark');
     setMounted(true);
   }, []);
 
