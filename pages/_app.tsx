@@ -7,6 +7,7 @@ import About from '../components/About'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import Experience from '../components/Experience'
 import Projects from '../components/Projects'
+import Footer from '../components/Footer'
 
 interface themedAppProps extends Omit<AppProps, "Component"> {
   Component: AppProps["Component"] & { theme: string | undefined }
@@ -27,7 +28,7 @@ export default function App({ Component, pageProps }: themedAppProps) {
         <Experience/>
         <Projects/>
       </div>
-      
+      <Footer />
     </ThemeProvider>
   )
 }
