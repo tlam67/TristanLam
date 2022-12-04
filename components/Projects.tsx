@@ -2,71 +2,49 @@ import styles from '../styles/Home.module.css'
 import profile from '../public/temp.jpg'
 import Image from 'next/image'
 import { ReactElement, useState } from 'react'
+import ProjectCard from './ProjectCard'
 
-const titles = [
-  'Software Engineer',
-  'Student',
-  'Competitive Soccer Player',
-  'Learner',
+interface ProjectInfo {
+  title: string,
+  description: string,
+  github?: string,
+  link?: string,
+}
+
+const projectInfo: ProjectInfo[] = [
+  {
+    title: 'Wave chat',
+    description: 'Wave is a social-media platform that connects incoming first-year students from the same university. Built as a COVID-19 solution, Wave allows meaningful friendships to be formed, despite the lack of in-person activities while we all social distance. Wave has 1500+ users.'
+  },
+  {
+    title: 'Free burger project',
+    description: 'Automation of receipt info extraction and survey completion to get free burger coupons born from my reliance on late night Burger King runs after long nights of studying (and procrastinating)'
+  },
+  {
+    title: 'Random thing',
+    description: 'an even longer description'
+  },
+  {
+    title: 'Thingy majiggy',
+    description: 'a massive huge enormous large super long incredibly boring and redundant block of text forming an incromprehensible wall of nothingness'
+  },
 ]
 
-interface DescriptionTypes {
-  tldr: ReactElement,
-  less: ReactElement,
-  default: ReactElement,
-  more: ReactElement,
-}
-
-const descriptions: DescriptionTypes = {
-  tldr: <div><p>tldr</p></div>,
-  less: <p>less</p>,
-  default: <p>default</p>,
-  more: <p>more</p>,
-}
-
-const selectedButtonStyle = 'ring-2 rounded-md dark:ring-arrow-blue ring-black'
-
-const Description = (descriptionType: string, setDescriptionType: (descriptionType: string) => void) => {
-
-  const selectDescription = (type: string) =>  {
-    if (type === 'tldr') {
-      return descriptions.tldr;
-    } else if (type === 'less') {
-      return descriptions.less;
-    } else if (type === 'more') {
-      return descriptions.more;
-    }
-    return descriptions.default;
-  }
-
-  return (
-    <div className=''>
-      <div className='mt-3 grid grid-cols-4 gap-4'>
-        <button className={` m-1 p-1 ${descriptionType === 'tldr' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('tldr')}>TL;DR</button>
-        <button className={` m-1 p-1 ${descriptionType === 'less' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('less')}>Less</button>
-        <button className={` m-1 p-1 ${descriptionType === 'default' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('default')}>Default</button>
-        <button className={` m-1 p-1 ${descriptionType === 'more' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('more')}>More</button>
-      </div>
-      
-      {selectDescription(descriptionType)}
-      <Image src={profile} alt="profile picture" width={80} height={80} className="justify-self-center"/>
-    </div>
-  );
-}
 
 const Projects = () => {
-  const [descriptionType, setDescriptionType] = useState('default');
-  const [open, setOpen] = useState(false);
-
   return (
-    <div className="px-32 py-0" id="about">
+    <div className="px-32 py-0" id="projects">
       <main className="py-8 px-0 flex flex-1 flex-col justify-start items-center">
-        <a onClick={() => setOpen(!open)} className="cursor-pointer">
-        <h1 className="text-5xl justify-self-center">
+        <h1 className="text-4xl justify-self-center mb-5">
           Projects
         </h1>
-        </a>
-        {open ? Description(descriptionType, setDescriptionType) : null}
+        <div className='grid grid-cols-3 gap-4'>
+        {projectInfo.map((entry: ProjectInfo, idx: number) => {
+            return (
+              <ProjectCard key={idx} {... entry}/>
+            );
+          })}
+        </div>
       </main>
     </div>
   );
