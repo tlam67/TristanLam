@@ -45,7 +45,7 @@ const Projects = () => {
         <h1 className="text-4xl justify-self-center mb-5">
           Projects
         </h1>
-        <div className='grid grid-cols-3 gap-4'>
+        <div className={`grid grid-cols-${projectInfo.length <= 2? projectInfo.length : 3} gap-4`}>
         {projectInfo.map((entry: ProjectInfo, idx: number) => {
             return (
               <ProjectCard key={idx} {... entry}/>
