@@ -10,7 +10,7 @@ export const ScrollLink: FC<LinkProps & HTMLProps<HTMLAnchorElement>> = ({ as, c
     }
   };
   return (
-    <NextLink as={as} href={href} passHref={passHref} replace={replace} scroll={scroll} shallow={shallow} onClick={onClick} {...rest}>
+    <NextLink as={as} href={href} passHref={passHref} replace={replace} scroll={scroll} shallow={shallow} onClick={onClick} key={rest.key} className={rest.className}>
         {children}
     </NextLink>
   );
