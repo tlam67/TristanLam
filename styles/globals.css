@@ -43,6 +43,14 @@ a {
   animation-timing-function: ease-in-out;
 }
 
+#employment-entry:hover svg {
+  transform: rotate(90deg);
+}
+
+#employment-entry svg {
+  transition-duration: 0.75s;
+}
+
 /* 
 below is code for bouncing down arrow only on hover, to enable
 uncomment below and swap the animation play state in the above code
