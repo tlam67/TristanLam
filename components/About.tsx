@@ -34,7 +34,8 @@ const Description = (descriptionType: string, setDescriptionType: (descriptionTy
     <>
       {(aboutData.img && aboutData.imgWidth && aboutData.imgHeight) ? <Image src={"/" + aboutData.img} alt="profile picture" width={aboutData.imgWidth} height={aboutData.imgHeight} className="my-4 justify-self-center w-80 md:w-100 lg:w-150"/> : <></>}
 
-      <div className={`my-3 grid grid-cols-${numOfDescriptions} gap-4`}>
+      {/* <div className={`my-3 grid grid-cols-${numOfDescriptions} gap-4`}> */}
+      <div className={`my-3 grid grid-cols-4 gap-4`}>
         {aboutData.tldr ? <button className={` m-1 p-1 ${descriptionType === 'tldr' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('tldr')}>TL;DR</button> : <></>}
         {aboutData.less ? <button className={` m-1 p-1 ${descriptionType === 'less' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('less')}>Less</button> : <></>}        
         <button className={` m-1 p-1 ${descriptionType === 'default' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('default')}>Default</button>
