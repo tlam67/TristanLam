@@ -2,11 +2,6 @@ import ThemeSwitcher from "./ThemeSwitcher";
 import NextLink from "next/link";
 import { ScrollLink } from "./ScrollLink";
 
-interface HeaderEntry {
-  label: string,
-  href: string,
-}
-
 const headerData: HeaderEntry[] = [
   {
     label: "Home",

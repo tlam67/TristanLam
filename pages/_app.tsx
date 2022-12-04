@@ -9,10 +9,6 @@ import Experience from '../components/Experience'
 import Projects from '../components/Projects'
 import Footer from '../components/Footer'
 
-interface themedAppProps extends Omit<AppProps, "Component"> {
-  Component: AppProps["Component"] & { theme: string | undefined }
-}
-
 /*
 Ideas for animations:
 fade in my name first, then the subtitle, then left to right fade in of header and opacity 0 to 100 on the bouncing arrow

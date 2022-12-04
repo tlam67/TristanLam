@@ -1,6 +1,7 @@
 {
   "name": "new-site",
   "version": "0.1.0",
+  "typings": "types.d.ts",
   "private": true,
   "scripts": {
     "dev": "next dev",

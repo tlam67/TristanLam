@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css'
-import profile from '../public/temp.jpg'
+import me from '../public/me.jpg'
 import Image from 'next/image'
 import { ReactElement, useState } from 'react'
 
@@ -9,13 +9,6 @@ const titles = [
   'Competitive Soccer Player',
   'Learner',
 ]
-
-interface DescriptionTypes {
-  tldr: ReactElement,
-  less: ReactElement,
-  default: ReactElement,
-  more: ReactElement,
-}
 
 const descriptions: DescriptionTypes = {
   tldr: <div><p>tldr</p></div>,
@@ -41,7 +34,7 @@ const Description = (descriptionType: string, setDescriptionType: (descriptionTy
 
   return (
     <>
-      <Image src={profile} alt="profile picture" className="my-4 justify-self-center w-80 md:w-100 lg:w-150"/>
+      <Image src={me} alt="profile picture" className="my-4 justify-self-center w-80 md:w-100 lg:w-150"/>
 
       <div className='my-3 grid grid-cols-4 gap-4'>
         <button className={` m-1 p-1 ${descriptionType === 'tldr' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('tldr')}>TL;DR</button>
@@ -62,17 +55,14 @@ const Description = (descriptionType: string, setDescriptionType: (descriptionTy
 
 const About = () => {
   const [descriptionType, setDescriptionType] = useState('default');
-  const [open, setOpen] = useState(true);
 
   return (
     <div className="px-32 py-0" id="about">
       <main className="pt-24 px-0  flex flex-1 flex-col flex-wrap justify-start items-center">
-      <a onClick={() => setOpen(!open)} className="cursor-pointer">
-        <h1 className="text-4xl justify-self-center">
-          About Me
-        </h1>
-      </a>
-      {open ? Description(descriptionType, setDescriptionType) : null}
+      <h1 className="text-4xl justify-self-center">
+        About Me
+      </h1>
+      {Description(descriptionType, setDescriptionType)}
       </main>
     </div>
   );

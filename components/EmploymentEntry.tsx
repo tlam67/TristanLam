@@ -3,17 +3,6 @@ import Image, { StaticImageData } from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
-interface EmploymentInfo {
-  company: string,
-  position: string,
-  date: string,
-  logo: StaticImageData,
-  logoWidth: number,
-  logoHeight: number,
-  description: string,
-  href: string,
-}
-
 const EmploymentEntry = (employmentInfo: EmploymentInfo) => {
   const [showDetails, setShowDetails] = useState(false);
   

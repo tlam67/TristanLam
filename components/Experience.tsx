@@ -18,17 +18,6 @@ const titles = [
   'Learner',
 ]
 
-interface EmploymentInfo {
-  company: string,
-  position: string,
-  date: string,
-  logo: StaticImageData,
-  logoWidth: number,
-  logoHeight: number,
-  description: string,
-  href: string,
-}
-
 const employments: EmploymentInfo[] = [
   {
     company: "Arcturus Networks",

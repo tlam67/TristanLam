@@ -4,14 +4,6 @@ import Image from 'next/image'
 import { ReactElement, useState } from 'react'
 import ProjectCard from './ProjectCard'
 
-interface ProjectInfo {
-  title: string,
-  description: string,
-  detailedDescription: string,
-  github?: string,
-  link?: string,
-}
-
 const projectInfo: ProjectInfo[] = [
   {
     title: 'Wave chat',
