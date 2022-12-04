@@ -71,6 +71,7 @@ const Experience = () => {
         <h1 className="text-4xl justify-self-center mb-5">
           Experience
         </h1>
+        <p className='mb-5'>Expand the positions below for quick information, or check out my <a href="">resume</a></p>
         {employments.map((employmentInfo: EmploymentInfo, idx: number) => {
             return (
               <EmploymentEntry {... employmentInfo} key={idx} />
