@@ -1,8 +1,35 @@
+interface themedAppProps extends Omit<AppProps, "Component"> {
+  Component: AppProps["Component"] & { theme: string | undefined }
+}
+
 interface DescriptionTypes {
   tldr: ReactElement,
   less: ReactElement,
   default: ReactElement,
   more: ReactElement,
+}
+
+interface HeaderEntry {
+  label: string,
+  href: string,
+}
+
+interface HomeInfo {
+  websiteTitle: string,
+  title: string,
+  subtitle: string,
+  favicon?: string,
+}
+
+interface AboutInfo {
+  img?: string,
+  imgHeight?: number,
+  imgWidth?: number,
+  tldr?: string,
+  less?: string,
+  default: string,
+  more?: string,
+  resume?: string,
 }
 
 interface EmploymentInfo {
@@ -16,11 +43,6 @@ interface EmploymentInfo {
   href: string,
 }
 
-interface HeaderEntry {
-  label: string,
-  href: string,
-}
-
 interface ProjectInfo {
   title: string,
   description: string,
@@ -29,6 +51,11 @@ interface ProjectInfo {
   link?: string,
 }
 
-interface themedAppProps extends Omit<AppProps, "Component"> {
-  Component: AppProps["Component"] & { theme: string | undefined }
+interface FooterInfo {
+  email?: string,
+  github?: string,
+  linkedin?: string,
+  twitter?: string,
+  facebook?: string,
+  instagram?: string,
 }
