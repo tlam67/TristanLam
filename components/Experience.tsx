@@ -3,7 +3,7 @@ import profile from '../public/temp.jpg'
 import Image, { StaticImageData } from 'next/image'
 import { ReactElement, useState } from 'react'
 import pic from '../public/temp.jpg'
-import arcturusLogo from '../public/Arcturus-logo-light.svg'
+import arcturusLogo from '../public/arcturus-logo.svg'
 import wsibLogo from '../public/wsib-logo.svg'
 import hopinLogo from '../public/hopin-logo.svg'
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
