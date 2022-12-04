@@ -1,9 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { useState } from 'react'
 import { ThemeProvider } from 'next-themes'
-import { lightTheme, darkTheme, GlobalStyles } from '../ThemeConfig'
-import ThemeSwitcher from '../components/ThemeSwitcher'
 import Header from '../components/Header'
 import About from '../components/About'
 
