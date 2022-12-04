@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { aboutData } from '../portfolioInfo'
+import renderText from '../utils/RenderText'
 
 const titles = [
   'Software Engineer',
@@ -20,13 +21,13 @@ const Description = (descriptionType: string, setDescriptionType: (descriptionTy
 
   const selectDescription = (type: string) =>  {
     if (type === 'tldr') {
-      return aboutData.tldr;
+      return renderText(aboutData.tldr, true);
     } else if (type === 'less') {
-      return aboutData.less;
+      return renderText(aboutData.less, true);
     } else if (type === 'more') {
-      return aboutData.more;
+      return renderText(aboutData.more, true);
     }
-    return aboutData.default;
+    return renderText(aboutData.default, true);
   }
 
   return (
@@ -41,9 +42,8 @@ const Description = (descriptionType: string, setDescriptionType: (descriptionTy
       </div>
 
       {/* center this later */}
-      <div className='w-96 max-w-2xl break-all'>
+      <div className='w-full max-w-2xl break-all'>
         {selectDescription(descriptionType)}
-
       </div>
       
     </>

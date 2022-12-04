@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import renderText from '../utils/RenderText';
 
 const EmploymentEntry = (employmentInfo: EmploymentInfo) => {
   const [showDetails, setShowDetails] = useState(false);
@@ -38,7 +39,7 @@ const EmploymentEntry = (employmentInfo: EmploymentInfo) => {
       <FontAwesomeIcon icon={faAngleRight} size="1x" className={'mt-2 ml-2 animate-pulse duration-750 ' + (showDetails ? 'rotate-90' : 'hover:rotate-90')}/>
     </div>
     <div className='flex flex-row items-center mb-4 w-full max-w-3xl cursor-pointer' id="employment-entry" onClick={toggleShowDetails}>
-      {showDetails ? <p className='mb-4 ml-[4.75rem] break-all justify-self-start'>{employmentInfo.description}</p> : null}
+      {showDetails ? <p className='mb-4 ml-[4.75rem] break-all justify-self-start'>{renderText(employmentInfo.description, true)}</p> : null}
     </div>
     </>
   );
