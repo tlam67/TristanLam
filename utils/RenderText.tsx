@@ -1,10 +1,10 @@
-const renderParagraph = ( paragraph: string, normalText: boolean ) => {
-  if (normalText) return <p>{paragraph}</p>
-  return <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">{paragraph}</p>
+const renderParagraph = ( paragraph: string, idx: number, normalText: boolean ) => {
+  if (normalText) return <p key={idx}>{paragraph}</p>
+  return <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400" key={idx}>{paragraph}</p>
 }
 
 const renderText = ( text: string | undefined, normalText: boolean = false ) => {
-  if (text) return text.split('\n').map((paragraph: string) => renderParagraph(paragraph, normalText));
+  if (text) return text.split('\n').map((paragraph: string, idx: number) => renderParagraph(paragraph, idx, normalText));
   return <></>;
 }
 
