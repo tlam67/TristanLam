@@ -7,6 +7,7 @@ import ProjectCard from './ProjectCard'
 interface ProjectInfo {
   title: string,
   description: string,
+  detailedDescription: string,
   github?: string,
   link?: string,
 }
@@ -14,25 +15,31 @@ interface ProjectInfo {
 const projectInfo: ProjectInfo[] = [
   {
     title: 'Wave chat',
-    description: 'Wave is a social-media platform that connects incoming first-year students from the same university. Built as a COVID-19 solution, Wave allows meaningful friendships to be formed, despite the lack of in-person activities while we all social distance. Wave has 1500+ users.'
+    description: 'Wave is a social-media platform that connects incoming first-year students from the same university. Built as a COVID-19 solution, Wave allows meaningful friendships to be formed, despite the lack of in-person activities while we all social distance. Wave has 1500+ users.',
+    detailedDescription: 'Wave is a social-media platform that connects incoming first-year students from the same university. Built as a COVID-19 solution, Wave allows meaningful friendships to be formed, despite the lack of in-person activities while we all social distance. Wave has 1500+ users.',
+    github: 'https://github.com/nicholas-tao/Wave-Chat',
   },
   {
     title: 'Free burger project',
-    description: 'Automation of receipt info extraction and survey completion to get free burger coupons born from my reliance on late night Burger King runs after long nights of studying (and procrastinating)'
+    description: 'Automation of receipt info extraction and survey completion to get free burger coupons born from my reliance on late night Burger King runs after long nights of studying (and procrastinating)',
+    detailedDescription: 'Automation of receipt info extraction and survey completion to get free burger coupons born from my reliance on late night Burger King runs after long nights of studying (and procrastinating)'
   },
   {
     title: 'Random thing',
-    description: 'an even longer description'
+    description: 'an even longer description',
+    detailedDescription: 'an even longer description'
   },
   {
     title: 'Thingy majiggy',
-    description: 'a massive huge enormous large super long incredibly boring and redundant block of text forming an incromprehensible wall of nothingness'
+    description: 'a massive huge enormous large super long incredibly boring and redundant block of text forming an incromprehensible wall of nothingness',
+    detailedDescription: 'a massive huge enormous large super long incredibly boring and redundant block of text forming an incromprehensible wall of nothingness'
   },
 ]
 
 
 const Projects = () => {
   return (
+    <>
     <div className="px-32 py-0" id="projects">
       <main className="py-8 px-0 flex flex-1 flex-col justify-start items-center">
         <h1 className="text-4xl justify-self-center mb-5">
@@ -47,6 +54,7 @@ const Projects = () => {
         </div>
       </main>
     </div>
+    </>
   );
 }
 
