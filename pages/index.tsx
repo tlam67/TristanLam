@@ -3,10 +3,11 @@ import styles from '../styles/Home.module.css'
 import NextLink from "next/link";
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { ScrollLink } from "../components/ScrollLink";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="home">
       <Head>
         <title>Tristan Lam</title>
         <meta name="description" content="Created by Tristan Lam" />
@@ -18,9 +19,9 @@ export default function Home() {
           Tristan Lam
         </h1>
         <h3>Computer Science @ UWaterloo </h3>
-        <NextLink href={"#about"} scroll={false} id="down-parent">
+        <ScrollLink href={"#about"}>
           <FontAwesomeIcon icon={faAngleDown} size="5x" className="mt-2" id="down-arrow"/>
-        </NextLink>
+        </ScrollLink>
       </main>
     </div>
   )
