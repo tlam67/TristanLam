@@ -3,7 +3,7 @@ import { experienceData } from '../portfolioInfo';
 
 const Experience = () => {
   return (
-    <div className="px-32 py-0" id="experience">
+    <div className="pt-24 px-32 py-0" id="experience">
       <main className="pt-8 px-0 flex flex-1 flex-col justify-start items-center">
         <h1 className="text-4xl justify-self-center mb-5">
           Experience

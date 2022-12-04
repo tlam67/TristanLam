@@ -15,19 +15,15 @@ const ThemeSwitcher = () => {
     return null;
   }
 
-  const toggleTheme = () => {
-    theme == 'light' ? setTheme('dark') : setTheme('light');
-  }
-
   const renderThemeIcon = () => {
     if (theme === 'light') {
-      return <FontAwesomeIcon icon={faMoon} />;
+      return <FontAwesomeIcon icon={faMoon} id="themeSwitch"/>;
     }
-    return <FontAwesomeIcon icon={faSun} />
+    return <FontAwesomeIcon icon={faSun} id="themeSwitch"/>
   }
 
   return (
-    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} className="w-9 h-9 rounded-lg bg-amber-100 dark:bg-blue-black hover:animate-pulse" aria-label="toggle theme">
+    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')} className="w-9 h-9 rounded-lg bg-amber-200 dark:bg-blue-black hover:animate-pulse" aria-label="toggle theme">
       {renderThemeIcon()}
     </button>
   )

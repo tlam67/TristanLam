@@ -43,6 +43,14 @@ a {
   animation-timing-function: ease-in-out;
 }
 
+#up-arrow {
+  animation: 1.5s bounceOrig infinite;
+  /* animation-play-state: paused; */
+  animation-play-state: running;
+  animation-timing-function: ease-in-out;
+  @apply dark:text-arrow-blue text-black; 
+}
+
 #employment-entry:hover svg {
   transform: rotate(90deg);
 }
@@ -74,9 +82,27 @@ uncomment below and swap the animation play state in the above code
     @apply dark:bg-blue-black bg-amber-50;
   }
   header {
-    @apply dark:bg-header-gray bg-amber-50;
+    @apply dark:bg-header-gray bg-amber-100;
   }
   svg {
+    @apply dark:text-arrow-blue text-amber-400;
+  }
+  #github {
+    @apply dark:text-arrow-blue text-black;
+  }
+  #linkedin {
+    @apply dark:text-arrow-blue text-black;
+  }
+  #twitter {
+    @apply dark:text-arrow-blue text-black;
+  }
+  #facebook {
+    @apply dark:text-arrow-blue text-black;
+  }
+  #instagram {
+    @apply dark:text-arrow-blue text-black;
+  }
+  #themeSwitch {
     @apply dark:text-arrow-blue text-black;
   }
 }

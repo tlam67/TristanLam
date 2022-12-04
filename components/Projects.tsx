@@ -4,7 +4,7 @@ import { projectData } from '../portfolioInfo'
 const Projects = () => {
   return (
     <>
-    <div className="px-32 py-0" id="projects">
+    <div className="pt-24 px-32 py-0" id="projects">
       <main className="py-8 px-0 flex flex-1 flex-col justify-start items-center">
         <h1 className="text-4xl justify-self-center mb-5">
           Projects
