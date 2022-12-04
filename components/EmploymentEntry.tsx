@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import Image, { StaticImageData } from 'next/image'
+import { useState } from 'react'
+import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -11,12 +11,12 @@ const EmploymentEntry = (employmentInfo: EmploymentInfo) => {
   return (
     <>
     <div className='flex flex-row items-center mb-4 w-full max-w-3xl cursor-pointer' id="employment-entry" onClick={toggleShowDetails}>
-      <a href={employmentInfo.href}>
+      <a href={employmentInfo.href} onClick={e => e.stopPropagation()} target="_blank" rel="noopener noreferrer">
         <Image
           alt={employmentInfo.company + " logo"}
           height={employmentInfo.logoHeight}
           width={employmentInfo.logoWidth}
-          src={employmentInfo.logo}
+          src={"/" + employmentInfo.logo}
           priority
           className={"mr-4 p-2 rounded-lg"}
         />

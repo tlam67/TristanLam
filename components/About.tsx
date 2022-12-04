@@ -1,7 +1,6 @@
-import styles from '../styles/Home.module.css'
-import me from '../public/me.jpg'
 import Image from 'next/image'
-import { ReactElement, useState } from 'react'
+import { useState } from 'react'
+import { aboutData } from '../portfolioInfo'
 
 const titles = [
   'Software Engineer',
@@ -10,37 +9,35 @@ const titles = [
   'Learner',
 ]
 
-const descriptions: DescriptionTypes = {
-  tldr: <div><p>tldr</p></div>,
-  less: <p>less</p>,
-  default: <><p className=''>123456789qwertyuiopasdfghjklzxcvbnm123456789q wertyuiopasdfghjklzxcvbnm123456789qwertyuiopasdfghjklzxcvbnm</p><br/><p>second paragraph</p></>,
-  more: <p>more</p>,
-}
-
 const selectedButtonStyle = 'ring-2 rounded-md dark:ring-arrow-blue ring-black'
+
+var numOfDescriptions = 4;
+if (!aboutData.tldr) numOfDescriptions--;
+if (!aboutData.less) numOfDescriptions--;
+if (!aboutData.more) numOfDescriptions--;
 
 const Description = (descriptionType: string, setDescriptionType: (descriptionType: string) => void) => {
 
   const selectDescription = (type: string) =>  {
     if (type === 'tldr') {
-      return descriptions.tldr;
+      return aboutData.tldr;
     } else if (type === 'less') {
-      return descriptions.less;
+      return aboutData.less;
     } else if (type === 'more') {
-      return descriptions.more;
+      return aboutData.more;
     }
-    return descriptions.default;
+    return aboutData.default;
   }
 
   return (
     <>
-      <Image src={me} alt="profile picture" className="my-4 justify-self-center w-80 md:w-100 lg:w-150"/>
+      {(aboutData.img && aboutData.imgWidth && aboutData.imgHeight) ? <Image src={"/" + aboutData.img} alt="profile picture" width={aboutData.imgWidth} height={aboutData.imgHeight} className="my-4 justify-self-center w-80 md:w-100 lg:w-150"/> : <></>}
 
-      <div className='my-3 grid grid-cols-4 gap-4'>
-        <button className={` m-1 p-1 ${descriptionType === 'tldr' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('tldr')}>TL;DR</button>
-        <button className={` m-1 p-1 ${descriptionType === 'less' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('less')}>Less</button>
+      <div className={`my-3 grid grid-cols-${numOfDescriptions} gap-4`}>
+        {aboutData.tldr ? <button className={` m-1 p-1 ${descriptionType === 'tldr' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('tldr')}>TL;DR</button> : <></>}
+        {aboutData.less ? <button className={` m-1 p-1 ${descriptionType === 'less' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('less')}>Less</button> : <></>}        
         <button className={` m-1 p-1 ${descriptionType === 'default' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('default')}>Default</button>
-        <button className={` m-1 p-1 ${descriptionType === 'more' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('more')}>More</button>
+        {aboutData.more ? <button className={` m-1 p-1 ${descriptionType === 'more' ? selectedButtonStyle : undefined}`} onClick={() => setDescriptionType('more')}>More</button> : <></>}
       </div>
 
       {/* center this later */}

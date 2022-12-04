@@ -1,5 +1,4 @@
 import ThemeSwitcher from "./ThemeSwitcher";
-import NextLink from "next/link";
 import { ScrollLink } from "./ScrollLink";
 
 const headerData: HeaderEntry[] = [
