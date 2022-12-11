@@ -40,10 +40,10 @@ export const aboutData: AboutInfo = {
   img: 'me.jpg',
   imgHeight: 814,
   imgWidth: 889,
-  tldr: 'tldr',
-  less: 'less less',
-  default: '123456789qwertyuiopasdfghjklzxcvbnm123456789q wertyuiopasdfghjklzxcvbnm123456789qwertyuiopasdfghjklzxcvbnm',
-  more: 'more',
+  tldr: 'Shortest description',
+  less: 'A shorter description about me',
+  default: 'A default description about me',
+  more: 'A more verbose description about me',
   resume: '',
 }
 
