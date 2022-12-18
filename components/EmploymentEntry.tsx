@@ -5,7 +5,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import renderText from '../utils/RenderText';
 
 const EmploymentEntry = (employmentInfo: EmploymentInfo) => {
-  const [showDetails, setShowDetails] = useState(true);
+  const [showDetails, setShowDetails] = useState(false);
   
   const toggleShowDetails = () => setShowDetails(!showDetails);
 
