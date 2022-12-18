@@ -43,7 +43,7 @@ const Description = (descriptionType: string, setDescriptionType: (descriptionTy
       </div>
 
       {/* center this later */}
-      <div className='w-full max-w-2xl break-all'>
+      <div className='w-full max-w-2xl'>
         {selectDescription(descriptionType)}
       </div>
       
