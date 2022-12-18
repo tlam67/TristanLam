@@ -39,7 +39,7 @@ const EmploymentEntry = (employmentInfo: EmploymentInfo) => {
       <FontAwesomeIcon icon={faAngleRight} size="1x" className={'mt-2 ml-2 animate-pulse duration-750 ' + (showDetails ? 'rotate-90' : 'hover:rotate-90')}/>
     </div>
     <div className='flex flex-row items-center mb-4 w-full max-w-3xl cursor-pointer' id="employment-entry" onClick={toggleShowDetails}>
-      {showDetails ? <p className='mb-4 ml-[4.75rem] break-all justify-self-start'>{renderText(employmentInfo.description, true)}</p> : null}
+      {showDetails ? <div className='mb-4 ml-[4.75rem] break-all justify-self-start'>{renderText(employmentInfo.description, true)}</div> : null}
     </div>
     </>
   );
