@@ -1,4 +1,5 @@
 const renderParagraph = ( paragraph: string, idx: number, normalText: boolean ) => {
+  if (paragraph === "") return <br />
   if (normalText) return <p key={idx}>{paragraph}</p>
   return <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400" key={idx}>{paragraph}</p>
 }
