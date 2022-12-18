@@ -69,7 +69,7 @@ export const experienceData: EmploymentInfo[] = [
     logo: 'arcturus-logo.svg',
     logoWidth: 60,
     logoHeight: 60,
-    description: "arcturus description arcturus description arcturus description arcturus description arcturus description arcturus description arcturus description arcturus description arcturus description arcturus description arcturus description ",
+    description: "Full stack development of a real time video analytics and monitoring edge application.\n\nDeveloped front-end dashboards, PostgreSQL queries and optimization, and bus for reading/writing to InfluxDB.",
     href: "https://www.arcturusnetworks.com/",
   },
   {
@@ -79,7 +79,7 @@ export const experienceData: EmploymentInfo[] = [
     logo: 'wsib-logo.svg',
     logoWidth: 60,
     logoHeight: 60,
-    description: "wsib description",
+    description: "Full stack development and rapid prototyping new solutions to health record storage.\n\nCreated a medical entity recognition model to identify sensitive terms in docs, calculated relevancy score between terms and document subject, and developed web app for secure storage of health docs with auto redaction.",
     href: "https://www.wsib-lab.ca/",
   },
   {
@@ -89,7 +89,7 @@ export const experienceData: EmploymentInfo[] = [
     logo: 'hopin-logo.svg',
     logoWidth: 60,
     logoHeight: 60,
-    description: "hop in description",
+    description: "Full stack development of internal application, and client web + mobile application for transit shuttle routes at an early stage startup.\n\nDeveloped front-end interactive map for transit route generation, and metrics dashboard for internal app. Created GraphQL schemas and queries for supporting real time shuttle and passenger tracking, including ticket verification. Developed passenger web and mobile app, as well as driver app, implementing push notifications, QR code ticket scanning, and shuttle tracking.",
     href: "https://www.hopintech.com/",
   },
 ]
