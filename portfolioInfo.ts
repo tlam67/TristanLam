@@ -107,23 +107,18 @@ export const projectData: ProjectInfo[] = [
   {
     title: 'Wave chat',
     description: 'Wave is a social-media platform that connects incoming first-year students from the same university. Built as a COVID-19 solution, Wave allows meaningful friendships to be formed, despite the lack of in-person activities while we all social distance. Wave has 1500+ users.',
-    detailedDescription: 'Wave is a social-media platform that connects incoming first-year students from the same university. Built as a COVID-19 solution, Wave allows meaningful friendships to be formed, despite the lack of in-person activities while we all social distance. Wave has 1500+ users.',
+    detailedDescription: 'Wave is a social-media platform that connects incoming first-year students from the same university. Built as a COVID-19 solution, Wave allows meaningful friendships to be formed, despite the lack of in-person activities while we all social distance. Wave has 1500+ users.\nBuilt using React, Node, Express, MongoDB for user info, Heroku for deployment, Socket.io for video/text chats, and Bcrypt for password salt and hashing. DefHacks2020 winner, continued work on the project after the hackathon, eventually conducting a beta test with ~100 participants and launching, peaking at over 1500 users.',
     github: 'https://github.com/nicholas-tao/Wave-Chat',
   },
   {
     title: 'Free burger project',
     description: 'Automation of receipt info extraction and survey completion to get free burger coupons born from my reliance on late night Burger King runs after long nights of studying (and procrastinating)',
-    detailedDescription: 'Automation of receipt info extraction and survey completion to get free burger coupons born from my reliance on late night Burger King runs after long nights of studying (and procrastinating)'
+    detailedDescription: 'Automation of receipt info extraction and survey completion to get free burger coupons born from my reliance on late night Burger King runs after long nights of studying (and procrastinating).\nUsed OpenCV to retrieve frames from camera feed or image, applying noise correction techniques including Gaussian blurring and adaptive thresholding to prepare for optical character recognition.\nRan optical character recognition model on the processed image using Tesseract, parsing output by taking advantage of common receipt structure (i.e. the store number is always listed near the same words). Important information is then used to auto-complete Burger King customer experience survey using Selenium and the coupon code is returned.'
   },
   {
-    title: 'Random thing',
-    description: 'an even longer description',
-    detailedDescription: 'an even longer description'
-  },
-  {
-    title: 'Thingy majiggy',
-    description: 'a massive huge enormous large super long incredibly boring and redundant block of text forming an incromprehensible wall of nothingness',
-    detailedDescription: 'a massive huge enormous large super long incredibly boring and redundant block of text forming an incromprehensible wall of nothingness'
+    title: 'Valorant player detection and analysis',
+    description: 'YoloV5 object detection algorithm trained on Valorant character models to detect teammates and enemies, and collect metrics in real time.',
+    detailedDescription: 'Trained YoloV5 on labeled dataset of Valorant character models, both teammates and enemies, as well as event detections such as bomb planted, teammate/enemy killed.\nRan simple text recognition model in parallel to identify which pro player an e-sports stream was spectating in order to log more detailed player metrics, such as time to kill, crosshair distance from target, and headshot rate.\nLogged metrics in InfluxDB and created Grafana dashoards to view metrics'
   },
 ]
 
