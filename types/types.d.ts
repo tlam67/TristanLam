@@ -18,6 +18,7 @@ interface HomeInfo {
   websiteTitle: string,
   title: string,
   subtitle: string,
+  subsubtitle?: string,
   favicon?: string,
 }
 
