@@ -8,7 +8,7 @@ const Experience = () => {
         <h1 className="text-4xl justify-self-center mb-5">
           Experience
         </h1>
-        <p className='mb-5'>Expand the positions below for quick information, or check out my <a href="Tristan_Resume_Aug2023.pdf" download><b>Resume</b></a></p>
+        <p className='mb-5'>Expand the positions below for quick information, or check out my <a href="Tristan_Resume_Aug2023.pdf" target="_blank"><b>Resume</b></a></p>
         {experienceData.map((employmentInfo: EmploymentInfo, idx: number) => {
             return (
               <EmploymentEntry {... employmentInfo} key={idx} />
