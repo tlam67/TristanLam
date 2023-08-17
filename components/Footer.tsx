@@ -12,7 +12,7 @@ const Footer = () => {
         </ScrollLink>
       </div>
       <div className="flex flex-row items-center justify-center space-x-4 mb-2">
-        <span className="dark:text-gray-400">Developed by Tristan Lam © 2022</span>
+        <span className="dark:text-gray-400">Developed by Tristan Lam © 2023</span>
         <span className="dark:text-gray-400"><a href={`mailto:${footerData.email}`}>{footerData.email}</a></span>
         <div className="flex space-x-4">
           {footerData.github ? <a href={`https://github.com/${footerData.github}`} className="text-gray-500 hover:text-gray-900 dark:hover:text-white" target="_blank" rel="noopener noreferrer">
